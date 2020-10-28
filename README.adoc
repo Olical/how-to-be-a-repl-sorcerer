@@ -1,0 +1,3 @@
+= How to be a REPL sorcerer
+
+Code and scripts to accompany my talk of the same name.
