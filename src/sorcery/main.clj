@@ -29,11 +29,20 @@
 (defn -main []
   (println "Hello, World!" (add 1 2)))
 
+(defn slow-print [& args]
+  (Thread/sleep 10000)
+  (apply println args))
+
 (comment
+  (slow-print "Hello, World! Eventually!")
+  (+ 10 20)
+
   (server/start-server
     {:accept 'clojure.core.server/io-prepl
      :address "localhost"
      :port 5555
      :name "my-prepl"})
+
   (server/stop-server "my-prepl")
+
   (remote-eval "(+ 1 2)"))
