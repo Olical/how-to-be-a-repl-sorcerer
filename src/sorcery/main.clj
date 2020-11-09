@@ -30,4 +30,10 @@
   (println "Hello, World!" (add 1 2)))
 
 (comment
+  (server/start-server
+    {:accept 'clojure.core.server/io-prepl
+     :address "localhost"
+     :port 5555
+     :name "my-prepl"})
+  (server/stop-server "my-prepl")
   (remote-eval "(+ 1 2)"))
