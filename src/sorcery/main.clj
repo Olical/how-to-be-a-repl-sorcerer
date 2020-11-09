@@ -5,6 +5,12 @@
 (defn add [a b]
   (+ a b))
 
+(defn before []
+  (println "Stopped!"))
+
+(defn after []
+  (println "Started!"))
+
 (defn remote-eval [code]
   (with-open [reader (PipedReader.)
               writer (PipedWriter.)]
